@@ -1,12 +1,12 @@
-# Frontend Mentor: Challenge Name
-This is a solution to the _[]()_ challenge on Frontend Mentor. Frontend Mentor challenges help improve coding skills through building realistic projects.
+# Frontend Mentor: Tip Calculator App
+This is a solution to the _[Tip Calculator App](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)_ challenge on Frontend Mentor. Frontend Mentor challenges help improve coding skills through building realistic projects.
 
 
 ### Challenge
 
 
 ### Solution
-Live Site: []()
+Live Site: [https://tinuola.github.io/fm_tip-calculator/](https://tinuola.github.io/fm_tip-calculator/)
 
 
 ### Potential Enhancement(s)

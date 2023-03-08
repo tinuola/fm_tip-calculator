@@ -1,10 +1,20 @@
 :root {
-  
+  --primary-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-gray-cyan: hsl(186, 14%, 43%);
+  --gray-cyan: hsl(184, 14%, 56%);
+  --light-gray-cyan: hsl(185, 41%, 84%);
+  --lighter-gray-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --primary-font: 'Space Mono', monospace;
+  --input-font-size: 24px;
 }
 
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  font-family: var(--primary-font);
+  font-size: 16px;
 }
 
 .sr-only {
@@ -19,10 +29,14 @@ body {
   position: absolute;  
 }
 
-.fm-attribution {
-  font-size: 12px;
+.fm-byline {
+  font-size: .75rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.fm-attribution a {
+.fm-byline,
+.fm-byline a {
   color: hsl(228, 45%, 44%);
 }
