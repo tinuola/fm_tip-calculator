@@ -20,25 +20,25 @@
     <section>
       <div>
         <p>Bill</p>
-        <input type="text">
+        <input type="text" id="bill-input">
       </div>
       <div>
         <p>Select Tip %</p>
         <div>
           <ul>
-            <li>5%</li>
-            <li>10%</li>
-            <li>15%</li>
-            <li>25%</li>
-            <li>50%</li>
+            <li class="tip-percent"></li>
+            <li class="tip-percent"></li>
+            <li class="tip-percent"></li>
+            <li class="tip-percent"></li>
+            <li class="tip-percent"></li>
           </ul>
-          <input type="text" placeholder="Custom">
+          <input type="text" placeholder="Custom" id="custom-tip-input">
         </div>
         
       </div>
       <div>
         <p>Number of People</p>
-        <input type="text">
+        <input type="text" id="people-input">
       </div>
     </section>
 
@@ -48,16 +48,16 @@
           <p>Tip Amount</p>
           <p>/ Person</p>
         </div>
-        <p>$0.00</p>
+        <p id="tip-amount">$0.00</p>
       </div>
       <div>
         <div>
           <p>Total</p>
           <p>/ Person</p>
         </div>
-        <p>$0.00</p>
+        <p id="total-amount">$0.00</p>
       </div>
-      <button>Reset</button>
+      <button id="reset-btn">Reset</button>
     </section>
 
     <footer class="fm-byline-row">
@@ -65,6 +65,6 @@
       <p class="fm-byline">Coded by <a href="https://github.com/tinuola/fm_tip-calculator" target="_blank">TechTinu</a></p>
     </footer>
     
-    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
