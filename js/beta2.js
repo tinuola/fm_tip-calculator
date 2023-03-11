@@ -1,3 +1,15 @@
+/*  To Do :
+// - Make sure input value is a number
+// ---- Display error message if it is not
+// - Don't calculate if bill or people field is empty
+// ---- Display error message if it is
+// - Refactor event listener function for tip fields
+- Change state of reset btn when tip and total amts are displayed
+- Refactor event listener function for input fields
+- Recalculate when any input is changed, not just tips, so...
+---- App should keep track of active/current tip value
+*/
+
 const billInput = document.getElementById('bill-input')
 const billErrorMsg = document.querySelector('.bill-input-msg')
 let billValue 
@@ -117,17 +129,3 @@ customTipInput.addEventListener('change', function(){
 
 resetBtn.addEventListener('click', reset)
 
-
-
-/* 
-To Do :
-// - Make sure input value is a number
-// - Display error message if it is not
-// - Don't calculate if bill or people field is empty
-// - Display error message if it is
-- Change state of reset btn when tip and total amts are displayed
-- Refactor event listener function for input fields
-// - Refactor event listener function for tip fields
-- Recalculate when any input is changed, not just tips
--- Should keep track of active/current tip value globally?
-*/

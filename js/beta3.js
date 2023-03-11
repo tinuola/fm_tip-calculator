@@ -1,36 +1,38 @@
-/* To Do :
+/*  To Do :
+// - Change state of reset btn when tip and total amts are displayed
+// - Recalculate when any input is changed, not just tips, so...
+// ---- App should keep track of active/current tip value
 - Refactor event listener function for input fields
-- Change style of current vs unselected tip elements
+- Change style of current vs unselected tips
 
 BUG: When input field is a non-numerical value, calculation should NOT run
 - Create helper function to validate numerical input value 
 - Add this to calculate function
 */
 
-const billInput = document.querySelector('#bill-input')
+const billInput = document.getElementById('bill-input')
 const billErrorMsg = document.querySelector('.bill-input-msg')
 let billValue 
 
-const peopleInput = document.querySelector('#people-input')
+const peopleInput = document.getElementById('people-input')
 const peopleErrorMsg = document.querySelector('.people-input-msg')
 let peopleValue
 
 const tipPercents = document.querySelectorAll('.tip-percent')
-const customTipInput = document.querySelector('#custom-tip-input')
+const customTipInput = document.getElementById('custom-tip-input')
 const tipErrorMsg = document.querySelector('.tip-input-msg')
 let customTipValue
 
-const tipAmtDisplay = document.querySelector('#tip-amount')
-const totalAmtDisplay = document.querySelector('#total-amount')
+const tipAmtDisplay = document.getElementById('tip-amount')
+const totalAmtDisplay = document.getElementById('total-amount')
 
-const resetBtn = document.querySelector('#reset-btn')
+const resetBtn = document.getElementById('reset-btn')
 
 const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/
 const intRegex = /^\d*$/
 
 const tips = [5, 10, 15, 20, 25]
-
-let currentTip // Store/track current tip value
+let currentTip // Manages state of current tip
 
 
 /******************
@@ -154,3 +156,4 @@ customTipInput.addEventListener('change', function(){
 
 
 resetBtn.addEventListener('click', reset)
+

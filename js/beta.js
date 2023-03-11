@@ -1,3 +1,13 @@
+/* To Do :
+- Make sure input value is a number
+---- Display error message if it is not
+- Don't calculate if bill or people field is empty
+---- Display error message if it is
+- Change state of reset btn when tip and total amts are displayed
+- Refactor event listener function for input fields
+- Refactor event listener function for tip fields
+*/
+
 console.log('Splitter')
 
 const billInput = document.getElementById('bill-input')
@@ -83,14 +93,3 @@ const reset = () =>{
 resetBtn.addEventListener('click', reset)
 
 displayTipValues()
-
-/* 
-To Do :
-- Make sure input value is a number
-- Display error message if it is not
-- Don't calculate if bill or people field is empty
-- Display error message if it is
-- Change state of reset btn when tip and total amts are displayed
-- Refactor event listener function for input fields
-- Refactor event listener function for tip fields
-*/
