@@ -121,8 +121,13 @@ resetBtn.addEventListener('click', reset)
 
 /* 
 To Do :
+// - Make sure input value is a number
+// - Display error message if it is not
+// - Don't calculate if bill or people field is empty
+// - Display error message if it is
 - Change state of reset btn when tip and total amts are displayed
 - Refactor event listener function for input fields
+// - Refactor event listener function for tip fields
 - Recalculate when any input is changed, not just tips
 -- Should keep track of active/current tip value globally?
 */
