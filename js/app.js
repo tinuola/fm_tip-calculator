@@ -51,6 +51,7 @@ const calcShowResults = (num) => {
   let isInputEmpty = verifyNonEmptyInput()
 
   if(isInputEmpty){
+    tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty`
     return null;
   } else {
     billValue = Number(billInput.value)
@@ -64,6 +65,8 @@ const calcShowResults = (num) => {
     totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`
 
     tipErrorMsg.innerHTML = ``
+
+    resetBtn.style.backgroundColor = 'green'
   }
 }
 
@@ -75,6 +78,7 @@ const reset = () =>{
   customTipInput.value = ''
   tipAmtDisplay.innerHTML = `$0.00`
   totalAmtDisplay.innerHTML = `$0.00`
+  resetBtn.style.backgroundColor = 'transparent'
 }
 
 
@@ -89,11 +93,11 @@ billInput.addEventListener('change', function(){
   let isNum = floatRegex.test(billValue)
 
   !isNum ? 
-  billErrorMsg.innerHTML = `Please enter a valid number.` : 
-  billErrorMsg.innerHTML = ``
+  billErrorMsg.innerHTML = `Please enter a valid number.` 
+  : billValue === 0 ? billErrorMsg.innerHTML = `Cannot be a zero` 
+  : billErrorMsg.innerHTML = ``
 
   calcShowResults(currentTip)
-  tipErrorMsg.innerHTML = ``
 })
 
 
@@ -107,7 +111,6 @@ peopleInput.addEventListener('change', function(){
   : peopleErrorMsg.innerHTML = ``
 
   calcShowResults(currentTip)
-  tipErrorMsg.innerHTML = ``
 })
 
 
@@ -115,6 +118,7 @@ tipPercents.forEach((tip, i) => {
   tip.addEventListener('click', function(){
     let isInputEmpty = verifyNonEmptyInput()
     currentTip = tips[i]
+    tip.style.color = 'tomato'
 
     isInputEmpty ? 
     tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty` :
@@ -131,6 +135,7 @@ customTipInput.addEventListener('change', function(){
 
   let isInputEmpty = verifyNonEmptyInput()
   currentTip = customTipValue
+  customTipInput.style.color = 'tomato'
 
   !isNum ? tipErrorMsg.innerHTML = `Please enter a valid number.` 
   : isInputEmpty ? tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty`
@@ -143,8 +148,9 @@ resetBtn.addEventListener('click', reset)
 
 /* 
 To Do :
-- Change state of reset btn when tip and total amts are displayed
+// - Change state of reset btn when tip and total amts are displayed
 - Refactor event listener function for input fields
 // - Recalculate when any input is changed, not just tips
 // -- Should keep track of active/current tip value globally?
+- Change style of current vs unselected tips
 */

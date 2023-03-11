@@ -29,6 +29,15 @@ body {
   position: absolute;  
 }
 
+.container {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.fm-byline-row {
+  margin-top: 2rem;
+}
+
 .fm-byline {
   font-size: .75rem;
   letter-spacing: 1px;
