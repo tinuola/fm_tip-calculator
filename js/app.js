@@ -20,9 +20,13 @@ const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/
 const intRegex = /^\d*$/
 
 const tips = [5, 10, 15, 20, 25]
+let currentTip // Manages state of current tip
 
 
-// FUNCTIONS //
+/******************
+FUNCTIONS 
+*******************/
+
 
 // Display percentages from tips array
 const displayTipValues = () => {
@@ -33,7 +37,7 @@ const displayTipValues = () => {
 displayTipValues()
 
 
-// Verify if input field for Bill or People is empty
+// Verify if input field for bill or people is empty
 // Used by tip event listeners
 const verifyNonEmptyInput = () => {
   billValue = billInput.value
@@ -42,20 +46,25 @@ const verifyNonEmptyInput = () => {
 }
 
 
-// Calculate bill and display final result
-// Used by tip event listeners
-const calcAndDisplay = (num) => {
-  billValue = Number(billInput.value)
-  peopleValue = Number(peopleInput.value)
+// Calculate values and display final result
+const calcShowResults = (num) => {
+  let isInputEmpty = verifyNonEmptyInput()
 
-  let tip = num/100
-  let tipAmt = billValue * tip
-  let totalAmt = billValue + tipAmt
+  if(isInputEmpty){
+    return null;
+  } else {
+    billValue = Number(billInput.value)
+    peopleValue = Number(peopleInput.value)
 
-  tipAmtDisplay.innerHTML = `$${tipAmt / peopleValue}`
-  totalAmtDisplay.innerHTML = `$${totalAmt / peopleValue}`
+    let tip = num/100
+    let tipAmt = billValue * tip
+    let totalAmt = billValue + tipAmt
 
-  tipErrorMsg.innerHTML = ``
+    tipAmtDisplay.innerHTML = `$${(tipAmt / peopleValue).toFixed(2)}`
+    totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`
+
+    tipErrorMsg.innerHTML = ``
+  }
 }
 
 
@@ -69,38 +78,49 @@ const reset = () =>{
 }
 
 
-// EVENT LISTENERS //
+/******************
+EVENT LISTENERS 
+*******************/
 
-// Validate Bill input field
+
+// Validate input field for bill
 billInput.addEventListener('change', function(){
   billValue = Number(this.value)
   let isNum = floatRegex.test(billValue)
-  tipErrorMsg.innerHTML = ``
 
   !isNum ? 
   billErrorMsg.innerHTML = `Please enter a valid number.` : 
   billErrorMsg.innerHTML = ``
+
+  calcShowResults(currentTip)
+  tipErrorMsg.innerHTML = ``
 })
 
-// Validate People input field
+
+// Validate input field for people
 peopleInput.addEventListener('change', function(){
   peopleValue = Number(this.value)
   let isNum = intRegex.test(peopleValue)
-  tipErrorMsg.innerHTML = ``
 
   !isNum ? peopleErrorMsg.innerHTML = `Please enter a valid number.`  
   : peopleValue === 0 ? peopleErrorMsg.innerHTML = `Cannot be a zero` 
   : peopleErrorMsg.innerHTML = ``
+
+  calcShowResults(currentTip)
+  tipErrorMsg.innerHTML = ``
 })
 
 
 tipPercents.forEach((tip, i) => {
   tip.addEventListener('click', function(){
     let isInputEmpty = verifyNonEmptyInput()
+    currentTip = tips[i]
 
     isInputEmpty ? 
     tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty` :
-    calcAndDisplay(tips[i])
+    calcShowResults(tips[i])
+
+    customTipInput.value = ``
   })
 })
 
@@ -108,11 +128,13 @@ tipPercents.forEach((tip, i) => {
 customTipInput.addEventListener('change', function(){
   customTipValue = Number(this.value)
   let isNum = intRegex.test(customTipValue)
+
   let isInputEmpty = verifyNonEmptyInput()
+  currentTip = customTipValue
 
   !isNum ? tipErrorMsg.innerHTML = `Please enter a valid number.` 
   : isInputEmpty ? tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty`
-  : calcAndDisplay(customTipValue)
+  : calcShowResults(customTipValue)
 })
 
 resetBtn.addEventListener('click', reset)
@@ -123,6 +145,6 @@ resetBtn.addEventListener('click', reset)
 To Do :
 - Change state of reset btn when tip and total amts are displayed
 - Refactor event listener function for input fields
-- Recalculate when any input is changed, not just tips
--- Should keep track of active/current tip value globally?
+// - Recalculate when any input is changed, not just tips
+// -- Should keep track of active/current tip value globally?
 */
