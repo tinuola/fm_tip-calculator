@@ -1,8 +1,12 @@
 /* To Do :
 - Refactor event listener function for input fields
 - Change style of current vs unselected tip elements
+- Refactor to create more granular messages
 
-BUG: When input field is a non-numerical value, calculation should NOT run
+BUG: 
+When inputs are non-numerical values, calc should NOT run
+When inputs are selected but no tip is selected, calc should not run
+Currently displays NaN
 - Create helper function to validate numerical input value 
 - Add this to calculate function
 */
@@ -61,7 +65,7 @@ const calcShowResults = (num) => {
   let isInputEmpty = verifyNonEmptyInput()
 
   if(isInputEmpty){
-    tipErrorMsg.innerHTML = `Bill or Number of People cannot be empty`
+    tipErrorMsg.innerHTML = `Please enter Bill amount and Number of People.`
     return null;
   } else {
     billValue = Number(billInput.value)
