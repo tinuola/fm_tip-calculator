@@ -11,27 +11,25 @@
 }
 
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
   font-family: var(--primary-font);
-  font-size: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .sr-only {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   width: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;  
+  position: absolute;
 }
 
-.container {
-  max-width: 400px;
-  margin: 0 auto;
+main {
+  align-self: center;
 }
 
 .fm-byline-row {
@@ -39,7 +37,7 @@ body {
 }
 
 .fm-byline {
-  font-size: .75rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
   line-height: 1.5;
   text-align: center;
