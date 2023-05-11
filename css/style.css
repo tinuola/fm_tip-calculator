@@ -44,56 +44,16 @@ main {
   padding-bottom: 1rem;
 }
 
+/* Data/User Input Sections  */
+
 section {
   padding: 1rem 2rem 1rem 2rem;
-}
-
-section:last-of-type {
-  margin: 1rem 1.5rem;
-  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-  border-radius: 1rem;
-  background-color: var(--dark-cyan);
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
 }
 
 section h2 {
   font-size: 1rem;
   color: var(--dark-gray-cyan);
   margin-bottom: 0.375rem;
-}
-
-section h3 {
-  font-size: 1rem;
-  color: var(--white);
-}
-
-section h3 + p {
-  font-size: 0.8125rem;
-  color: var(--gray-cyan);
-}
-
-section > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-section > div > p {
-  font-size: 2rem;
-  color: var(--primary-cyan);
-}
-
-button {
-  margin-top: 0.75rem;
-  width: 100%;
-  border: 0;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  color: var(--dark-cyan);
-  background-color: var(--primary-cyan);
-  padding: 0.625rem 0;
 }
 
 section > h2 + input {
@@ -104,6 +64,8 @@ section > h2 + input {
   color: var(--dark-cyan);
   font-size: 1.5rem;
 }
+
+/* Tip Buttons */
 
 .input-fields {
   display: flex;
@@ -144,6 +106,52 @@ section > h2 + input {
   background-color: var(--lighter-gray-cyan);
   color: var(--gray-cyan);
 }
+
+/* Results Section */
+
+section:only-of-type {
+  margin: 1rem 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--dark-cyan);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+section h3 {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+section h3 + p {
+  font-size: 0.8125rem;
+  color: var(--gray-cyan);
+}
+
+section > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section > div > p {
+  font-size: 2rem;
+  color: var(--primary-cyan);
+}
+
+button {
+  margin-top: 0.75rem;
+  width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: var(--dark-cyan);
+  background-color: var(--primary-cyan);
+  padding: 0.625rem 0;
+}
+
+/* Footer */
 
 .fm-byline-row {
   margin-top: 2rem;

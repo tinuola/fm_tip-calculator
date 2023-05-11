@@ -41,13 +41,13 @@ FUNCTIONS
 *******************/
 
 // Display percentages from tips array
-const displayTipValues = () => {
-  tipPercents.forEach((tip, i) => {
-    // tip.innerHTML = `${tips[i]}%`
-    tip.value = `${tips[i]}`;
-  });
-};
-displayTipValues();
+// const displayTipValues = () => {
+// tipPercents.forEach((tip, i) => {
+// tip.innerHTML = `${tips[i]}%`
+// tip.value = `${tips[i]}`;
+// });
+// };
+// displayTipValues();
 
 // Verify if input field for bill or people is empty
 // Used by tip event listeners
