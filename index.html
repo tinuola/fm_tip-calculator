@@ -49,17 +49,10 @@
           type="text"
           id="bill-input"
           value="142.55" />
-        <p class="bill-input-msg"></p>
+        <!-- <p class="bill-input-msg"></p> -->
       </section>
       <section>
         <h2>Select Tip %</h2>
-        <!-- <ul>
-              <li class="tip-percent"></li>
-              <li class="tip-percent"></li>
-              <li class="tip-percent"></li>
-              <li class="tip-percent"></li>
-              <li class="tip-percent"></li>
-            </ul> -->
         <div class="input-fields">
           <label for="tip-five">
             <input
@@ -69,75 +62,44 @@
               data-number="5"
               id="tip-five" />
           </label>
-          <label for="tip-five">
+          <label for="tip-ten">
             <input
               type="radio"
               name="tip"
               class="tip-percent"
               data-number="10"
-              id="tip-five" />
+              id="tip-ten" />
           </label>
-          <label for="tip-five">
+          <label for="tip-fifteen">
             <input
               type="radio"
               name="tip"
               class="tip-percent"
               data-number="15"
-              id="tip-five" />
+              id="tip-fifteen" />
           </label>
-          <label for="tip-five">
-            <input
-              type="radio"
-              name="tip"
-              class="tip-percent"
-              data-number="20"
-              id="tip-five" />
-          </label>
-          <label for="tip-five">
+          <label for="tip-twentyfive">
             <input
               type="radio"
               name="tip"
               class="tip-percent"
               data-number="25"
-              id="tip-five" />
+              id="tip-twentyfive" />
           </label>
-          <label for="custom-input-tip">
+          <label for="tip-fifty">
+            <input
+              type="radio"
+              name="tip"
+              class="tip-percent"
+              data-number="50"
+              id="tip-fifty" />
+          </label>
+          <label for="custom-tip">
             <input
               type="text"
               placeholder="Custom"
-              id="custom-tip-input" />
+              id="custom-tip" />
           </label>
-          <!-- <input
-            type="radio"
-            name=""
-            class="tip-percent"
-            id="tip-ten" />
-          <label for="tip-ten">10%</label>
-          <input
-            type="radio"
-            name=""
-            class="tip-percent"
-            id="tip-fifteen" />
-          <label for="tip-fifteen">15%</label>
-          <input
-            type="radio"
-            name=""
-            class="tip-percent"
-            id="tip-twenty" />
-          <label for="tip-twenty">20%</label>
-          <input
-            type="radio"
-            name=""
-            class="tip-percent"
-            id="tip-twentyfive" />
-          <label for="tip-twentyfive">25%</label> -->
-          <!-- <input
-            type="text"
-            placeholder="Enter Custom Tip %"
-            id="custom-tip-input" />
-          <label
-            for="custom-tip-input"
-            class="sr-only"></label> -->
           <!-- <p class="tip-input-msg"></p> -->
         </div>
       </section>
@@ -147,22 +109,22 @@
           type="text"
           id="people-input"
           value="0" />
-        <p class="people-input-msg"></p>
+        <!-- <p class="people-input-msg"></p> -->
       </section>
       <section>
-        <div class="tip">
+        <div class="tip-amount">
           <div>
             <h3>Tip Amount</h3>
             <p>/ Person</p>
           </div>
-          <p id="tip-amount">$0.00</p>
+          <p id="tip-amount-display">$0.00</p>
         </div>
-        <div class="total">
+        <div class="total-amount">
           <div>
             <h3>Total</h3>
             <p>/ Person</p>
           </div>
-          <p id="total-amount">$0.00</p>
+          <p id="total-amount-display">$0.00</p>
         </div>
         <button id="reset-btn">Reset</button>
       </section>

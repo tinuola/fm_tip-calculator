@@ -32,7 +32,7 @@ const resetBtn = document.querySelector('#reset-btn');
 const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/;
 const intRegex = /^\d*$/;
 
-const tips = [5, 10, 15, 20, 25];
+const tips = [5, 10, 15, 25, 50];
 
 let currentTip; // Store/track current tip value
 
