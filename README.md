@@ -16,7 +16,7 @@ Live Site: [https://tinuola.github.io/fm_tip-calculator/](https://tinuola.github
 
 ### Retrospective
 
--
+- Working with Form elements: [radio input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio), using [focus](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) states
 
 ### Enhancement(s)
 
@@ -27,5 +27,6 @@ Live Site: [https://tinuola.github.io/fm_tip-calculator/](https://tinuola.github
 - HTML, CSS, JavaScript
 - CSS Resets
 - [Validation regex](https://stackoverflow.com/questions/15699094/how-to-validate-a-number-field-in-javascript-using-regular-expressions) _(Stack Overflow)_
+- [Put icon inside input element in a form](https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form#917636) _(Stack Overflow)_
 
 _Visit my [Frontend Mentor profile](https://www.frontendmentor.io/profile/tinuola) to view other challenges I've completed!_
