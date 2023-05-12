@@ -3,6 +3,7 @@
   --dark-cyan: hsl(183, 100%, 15%);
   --dark-gray-cyan: hsl(186, 14%, 43%);
   --gray-cyan: hsl(184, 14%, 56%);
+  --light-cyan: hsla(173, 61%, 77%, 1);
   --light-gray-cyan: hsl(185, 41%, 84%);
   --lighter-gray-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
@@ -65,6 +66,10 @@ section > h2 + input {
   font-size: 1.5rem;
 }
 
+input[type='text']:focus-visible {
+  outline: 2px solid var(--primary-cyan);
+}
+
 /* Tip Buttons */
 fieldset {
   border: 0;
@@ -82,6 +87,11 @@ fieldset {
   font-size: 1.5rem;
   text-align: center;
   color: var(--white);
+}
+
+.input-fields input:hover {
+  background-color: var(--light-cyan);
+  color: var(--dark-cyan);
 }
 
 .input-fields input[type='radio']::before {
@@ -148,7 +158,9 @@ button {
   padding: 0.625rem 0;
 }
 
-/* States */
+button:hover {
+  background-color: var(--light-cyan);
+}
 
 /* Footer */
 
