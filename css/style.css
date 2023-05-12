@@ -122,7 +122,8 @@ section h3 {
 
 section h3 + p {
   font-size: 0.8125rem;
-  color: var(--gray-cyan);
+  /* color: var(--gray-cyan); */
+  color: var(--white);
 }
 
 section > div {
@@ -131,7 +132,7 @@ section > div {
   align-items: center;
 }
 
-section > div > p {
+section > div > h4 {
   font-size: 2rem;
   color: var(--primary-cyan);
 }
@@ -142,7 +143,7 @@ button {
   border: 0;
   border-radius: 0.5rem;
   text-transform: uppercase;
-  color: var(--dark-cyan);
+  /* color: var(--dark-cyan); */
   background-color: var(--primary-cyan);
   padding: 0.625rem 0;
 }
