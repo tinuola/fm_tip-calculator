@@ -242,7 +242,7 @@ button.active:hover {
 /* Footer */
 
 .fm-byline-row {
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .fm-byline {
@@ -254,5 +254,5 @@ button.active:hover {
 
 .fm-byline,
 .fm-byline a {
-  color: hsl(228, 45%, 44%);
+  color: var(--dark-cyan);
 }
