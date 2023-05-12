@@ -66,15 +66,11 @@ section > h2 + input {
 }
 
 /* Tip Buttons */
-
-.input-fields {
+fieldset {
+  border: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-}
-
-.input-fields label {
-  display: flex;
 }
 
 .input-fields input {
@@ -150,6 +146,8 @@ button {
   background-color: var(--primary-cyan);
   padding: 0.625rem 0;
 }
+
+/* States */
 
 /* Footer */
 

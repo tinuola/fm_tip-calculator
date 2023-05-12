@@ -50,58 +50,84 @@
             type="text"
             id="bill-input"
             value="142.55" />
+          <label
+            for="bill-input"
+            class="sr-only"
+            >Enter Bill Amount</label
+          >
           <!-- <p class="bill-input-msg"></p> -->
         </section>
         <section>
           <h2>Select Tip %</h2>
           <div class="input-fields">
-            <label for="tip-five">
+            <fieldset>
+              <legend class="sr-only">Select Tip %</legend>
               <input
                 type="radio"
                 name="tip"
                 class="tip-percent"
                 data-number="5"
                 id="tip-five" />
-            </label>
-            <label for="tip-ten">
+              <label
+                for="tip-five"
+                class="sr-only"
+                >5%</label
+              >
               <input
                 type="radio"
                 name="tip"
                 class="tip-percent"
                 data-number="10"
                 id="tip-ten" />
-            </label>
-            <label for="tip-fifteen">
+              <label
+                for="tip-ten"
+                class="sr-only"
+                >10%</label
+              >
               <input
                 type="radio"
                 name="tip"
                 class="tip-percent"
                 data-number="15"
                 id="tip-fifteen" />
-            </label>
-            <label for="tip-twentyfive">
+              <label
+                for="tip-fifteen"
+                class="sr-only"
+                >15%</label
+              >
               <input
                 type="radio"
                 name="tip"
                 class="tip-percent"
                 data-number="25"
                 id="tip-twentyfive" />
-            </label>
-            <label for="tip-fifty">
+              <label
+                for="tip-twentyfive"
+                class="sr-only"
+                >25%</label
+              >
               <input
                 type="radio"
                 name="tip"
                 class="tip-percent"
                 data-number="50"
                 id="tip-fifty" />
-            </label>
-            <label for="custom-tip">
+              <label
+                for="tip-fifty"
+                class="sr-only"
+                >50%</label
+              >
               <input
                 type="text"
                 placeholder="Custom"
                 id="custom-tip" />
-            </label>
-            <!-- <p class="tip-input-msg"></p> -->
+              <label
+                for="custom-tip"
+                class="sr-only"
+                >Custom Tip</label
+              >
+              <!-- <p class="tip-input-msg"></p> -->
+            </fieldset>
           </div>
         </section>
         <section>
@@ -110,6 +136,11 @@
             type="text"
             id="people-input"
             value="0" />
+          <label
+            for="people-input"
+            class="sr-only"
+            >Enter Number of People</label
+          >
           <!-- <p class="people-input-msg"></p> -->
         </section>
       </div>
