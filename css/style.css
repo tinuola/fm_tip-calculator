@@ -66,6 +66,20 @@ section > h2 + input {
   font-size: 1.5rem;
 }
 
+#bill-input {
+  background-image: url('../assets/images/icon-dollar.svg');
+  background-repeat: no-repeat;
+  background-position: 1.25rem;
+  background-size: 15px;
+}
+
+#people-input {
+  background-image: url('../assets/images/icon-person.svg');
+  background-repeat: no-repeat;
+  background-position: 1.25rem;
+  background-size: 15px;
+}
+
 input[type='text']:focus-visible {
   outline: 2px solid var(--primary-cyan);
 }
@@ -89,7 +103,8 @@ fieldset {
   color: var(--white);
 }
 
-.input-fields input:hover {
+.input-fields input:hover,
+.input-fields input:checked {
   background-color: var(--light-cyan);
   color: var(--dark-cyan);
 }
@@ -153,12 +168,17 @@ button {
   border: 0;
   border-radius: 0.5rem;
   text-transform: uppercase;
-  /* color: var(--dark-cyan); */
-  background-color: var(--primary-cyan);
+  color: hsla(183, 100%, 15%, 1);
+  background-color: hsla(183, 78%, 24%, 1);
   padding: 0.625rem 0;
 }
 
-button:hover {
+button.active {
+  /* color: var(--dark-cyan); */
+  background-color: var(--primary-cyan);
+}
+
+button.active:hover {
   background-color: var(--light-cyan);
 }
 
