@@ -161,9 +161,13 @@ fieldset {
   }
 }
 
-.input-fields input:hover,
-.input-fields input:checked {
+.input-fields input:hover {
   background-color: var(--light-cyan);
+  color: var(--dark-cyan);
+}
+
+.input-fields input:checked {
+  background-color: var(--primary-cyan);
   color: var(--dark-cyan);
 }
 
