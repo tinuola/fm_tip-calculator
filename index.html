@@ -30,9 +30,9 @@
       rel="stylesheet"
       href="css/style.css" />
     <!-- Scripts -->
-    <!-- <script
+    <script
       src="js/app.js"
-      defer></script> -->
+      defer></script>
     <title>Tip Calculator App | Frontend Mentor</title>
   </head>
   <body>
@@ -44,22 +44,30 @@
     </header>
     <main>
       <div class="display-input">
+        <!-- Bill Input -->
         <section>
-          <h2>Bill</h2>
+          <div class="display-error">
+            <h2>Bill</h2>
+            <!-- <p>Enter a valid number</p> -->
+          </div>
           <input
             type="text"
             id="bill-input"
             class="input-bground"
-            value="0" />
+            placeholder="0" />
           <label
             for="bill-input"
             class="sr-only"
             >Enter Bill Amount</label
           >
-          <!-- <p class="bill-input-msg"></p> -->
         </section>
+
+        <!-- Tip Buttons -->
         <section>
-          <h2>Select Tip %</h2>
+          <div class="display-error">
+            <h2>Select Tip %</h2>
+            <!-- <p>Enter bill amount and number of people</p> -->
+          </div>
           <div class="input-fields">
             <fieldset>
               <legend class="sr-only">Select Tip %</legend>
@@ -127,17 +135,21 @@
                 class="sr-only"
                 >Custom Tip</label
               >
-              <!-- <p class="tip-input-msg"></p> -->
             </fieldset>
           </div>
         </section>
+
+        <!-- People Input -->
         <section>
-          <h2>Number of People</h2>
+          <div class="display-error">
+            <h2>Number of People</h2>
+            <!-- <p>Enter a valid number</p> -->
+          </div>
           <input
             type="text"
             id="people-input"
             class="input-bground"
-            value="0" />
+            placeholder="0" />
           <label
             for="people-input"
             class="sr-only"
