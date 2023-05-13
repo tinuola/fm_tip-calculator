@@ -101,6 +101,14 @@ main {
   margin-bottom: 0.375rem;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .input-bground {
   background-repeat: no-repeat;
   background-position: 1.25rem;

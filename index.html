@@ -42,18 +42,20 @@
         src="./assets/images/logo.svg"
         alt="App Logo" />
     </header>
+
+    <!-- App Body -->
     <main>
       <div class="display-input">
         <!-- Bill Input -->
         <section>
           <div class="display-error">
             <h2>Bill</h2>
-            <!-- <p>Enter a valid number</p> -->
+            <p class="hide">Enter a valid number</p>
           </div>
           <input
             type="text"
             id="bill-input"
-            class="input-bground"
+            class="input-num-field input-bground"
             placeholder="0" />
           <label
             for="bill-input"
@@ -66,7 +68,7 @@
         <section>
           <div class="display-error">
             <h2>Select Tip %</h2>
-            <!-- <p>Enter bill amount and number of people</p> -->
+            <p class="hide">Enter bill amount and number of people</p>
           </div>
           <div class="input-fields">
             <fieldset>
@@ -129,6 +131,7 @@
               <input
                 type="text"
                 placeholder="Custom"
+                class="input-num-field"
                 id="custom-tip" />
               <label
                 for="custom-tip"
@@ -143,21 +146,22 @@
         <section>
           <div class="display-error">
             <h2>Number of People</h2>
-            <!-- <p>Enter a valid number</p> -->
+            <p class="hide">Enter a valid number</p>
           </div>
           <input
             type="text"
             id="people-input"
-            class="input-bground"
+            class="input-num-field input-bground"
             placeholder="0" />
           <label
             for="people-input"
             class="sr-only"
             >Enter Number of People</label
           >
-          <!-- <p class="people-input-msg"></p> -->
         </section>
       </div>
+
+      <!-- Calculation Results -->
       <div class="display-result">
         <section>
           <div class="tip-amount">
@@ -178,6 +182,7 @@
         </section>
       </div>
     </main>
+
     <!-- <footer class="fm-byline-row">
       <p class="fm-byline">
         Challenge by
