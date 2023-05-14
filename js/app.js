@@ -1,49 +1,104 @@
-const billInput = document.querySelector('#bill-input');
 let billValue;
-
-const peopleInput = document.querySelector('#people-input');
+// let customTipValue;
 let peopleValue;
+let currentTip; // Store/track current tip value
+
+const customTipInput = document.querySelector('#custom-tip');
 
 const errorMsgs = document.querySelectorAll('.display-error p');
-const inputNumFields = document.querySelectorAll('.input-num-field');
+
+const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/;
+
+const errorMsgsList = {
+  1: 'Enter a valid number',
+  2: "Can't be zero",
+  3: 'Must be a whole number',
+  4: 'Enter bill amount',
+  5: 'Enter number of people',
+  6: 'Enter bill amount and number of people',
+  7: "Select a tip; don't be cheap!",
+};
+
+// Old variables to refactor or delete
+const billInput = document.querySelector('#bill-input');
+// let billValue;
+
+const peopleInput = document.querySelector('#people-input');
+// let peopleValue;
 
 const tipPercents = document.querySelectorAll('.tip-percent');
-const customTipInput = document.querySelector('#custom-tip-input');
+// const customTipInput = document.querySelector('#custom-tip');
 const tipErrorMsg = document.querySelector('.tip-input-msg');
-let customTipValue;
+// let customTipValue;
 
 const tipAmtDisplay = document.querySelector('#tip-amount');
 const totalAmtDisplay = document.querySelector('#total-amount');
 
 const resetBtn = document.querySelector('#reset-btn');
 
-const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/;
 const intRegex = /^\d*$/;
 
-const tips = [5, 10, 15, 25, 50];
-
-let currentTip; // Store/track current tip value
-
+/******************
+EVENT LISTENERS 
+*******************/
 document.addEventListener('input', function (e) {
-  if (e.target.matches('.input-num-field')) {
-    let input = e.target;
-    let inputValue = input.value;
-    let inputIdx = input.getAttribute('data-input');
-    // Check that input is number
+  let input = e.target;
+  if (input.matches('.input-num-field')) {
+    let inputValue = Number(input.value);
+    let inputIndex = input.getAttribute('data-input');
+    let errorMsg = errorMsgs[inputIndex];
     let isNum = floatRegex.test(inputValue);
 
+    // Make this is a function?
     if (!isNum) {
-      errorMsgs[inputIdx].classList.remove('hide');
+      errorMsg.innerHTML = errorMsgsList[1];
+      errorMsg.classList.remove('hide');
     } else {
-      errorMsgs[inputIdx].classList.add('hide');
+      errorMsg.classList.add('hide');
+      switch (inputIndex) {
+        case '0':
+          billValue = inputValue;
+          break;
+        case '1':
+          // customTipValue = inputValue;
+          currentTip = inputValue / 100;
+          console.log(currentTip);
+          // calculateTip()
+          break;
+        case '2':
+          peopleValue = inputValue;
+          break;
+      }
     }
   }
 });
 
-function validate(num) {
-  if (num.length === 0) {
-    return;
+document.addEventListener('click', function (e) {
+  let elem = e.target;
+  if (elem.matches('.tip-percent')) {
+    customTipInput.value = '';
+    let tipValue = elem.getAttribute('data-tip-amount');
+    currentTip = Number(tipValue / 100);
+    calculateTip(); //add para
   }
+
+  if (elem.matches('#custom-tip')) {
+    tipPercents.forEach((e) => {
+      e.checked = false;
+    });
+  }
+});
+
+/******************
+FUNCTIONS 
+*******************/
+
+function calculateTip() {
+  // Make sure bill value isn't 0 or null
+  // Make sure people value isn't 0 or null
+  // Display error
+  // Or calculate
+  // change reset button style
 }
 
 /******************

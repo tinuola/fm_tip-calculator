@@ -187,7 +187,7 @@ fieldset {
 .input-fields input[type='text'] {
   border: 0;
   background-color: var(--lighter-gray-cyan);
-  color: var(--gray-cyan);
+  color: var(--dark-gray-cyan);
 }
 
 /* Results Section */
