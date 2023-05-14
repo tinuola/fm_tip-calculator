@@ -27,14 +27,27 @@ let currentTip; // Store/track current tip value
 // Validate that bill input is not empty and is a number
 
 // Make sure el is working on each input and displaying message
-inputNumFields.forEach((input, i) => {
-  let idx = i;
-  input.addEventListener('click', function () {
-    if (this.value.length === 0) {
-      errorMsgs[idx].classList.remove('hide');
-    }
-  });
+// inputNumFields.forEach((input, i) => {
+//   let idx = i;
+//   input.addEventListener('click', function () {
+//     if (this.value.length === 0) {
+//       errorMsgs[idx].classList.remove('hide');
+//     }
+//   });
+// });
+
+document.addEventListener('click', function (e) {
+  if (e.target.matches('.input-num-field')) {
+    let idx = e.target.getAttribute('data-input');
+    errorMsgs[idx].classList.remove('hide');
+  }
 });
+
+function validate(num) {
+  if (num.length === 0) {
+    return;
+  }
+}
 
 /******************
 FUNCTIONS 
