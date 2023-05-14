@@ -172,7 +172,7 @@ fieldset {
 }
 
 .input-fields input[type='radio']::before {
-  content: attr(data-number);
+  content: attr(data-tip-amount);
 }
 
 .input-fields input[type='radio']::after {

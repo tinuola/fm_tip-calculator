@@ -24,22 +24,19 @@ const tips = [5, 10, 15, 25, 50];
 
 let currentTip; // Store/track current tip value
 
-// Validate that bill input is not empty and is a number
-
-// Make sure el is working on each input and displaying message
-// inputNumFields.forEach((input, i) => {
-//   let idx = i;
-//   input.addEventListener('click', function () {
-//     if (this.value.length === 0) {
-//       errorMsgs[idx].classList.remove('hide');
-//     }
-//   });
-// });
-
-document.addEventListener('click', function (e) {
+document.addEventListener('input', function (e) {
   if (e.target.matches('.input-num-field')) {
-    let idx = e.target.getAttribute('data-input');
-    errorMsgs[idx].classList.remove('hide');
+    let input = e.target;
+    let inputValue = input.value;
+    let inputIdx = input.getAttribute('data-input');
+    // Check that input is number
+    let isNum = floatRegex.test(inputValue);
+
+    if (!isNum) {
+      errorMsgs[inputIdx].classList.remove('hide');
+    } else {
+      errorMsgs[inputIdx].classList.add('hide');
+    }
   }
 });
 
