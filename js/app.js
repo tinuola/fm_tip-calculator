@@ -119,6 +119,7 @@ function calculateTip(num) {
 
     totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`;
 
+    resetBtn.removeAttribute('disabled');
     resetBtn.classList.add('active');
   }
 }
@@ -144,6 +145,7 @@ function resetApp() {
   customTipInput.value = '';
 
   resetBtn.classList.remove('active');
+  resetBtn.setAttribute('disabled');
 
   resetTipBtns();
   resetResults();
