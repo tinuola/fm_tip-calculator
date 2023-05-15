@@ -49,10 +49,14 @@ document.addEventListener('input', function (e) {
     let inputIndex = input.getAttribute('data-input');
     let errorMsg = errorMsgs[inputIndex];
     let isNum = floatRegex.test(inputValue);
-
+    // console.log(typeofinput.value);
     // Make this is a function?
     if (!isNum) {
       errorMsg.innerHTML = errorMsgsList[1];
+      errorMsg.classList.remove('hide');
+    } else if (inputValue === 0) {
+      console.log(inputValue);
+      errorMsg.innerHTML = errorMsgsList[2];
       errorMsg.classList.remove('hide');
     } else {
       errorMsg.classList.add('hide');
@@ -61,7 +65,7 @@ document.addEventListener('input', function (e) {
           billValue = inputValue;
           break;
         case '1':
-          currentTip = inputValue / 100;
+          currentTip = inputValue;
           break;
         case '2':
           peopleValue = inputValue;
@@ -79,11 +83,11 @@ document.addEventListener('click', function (e) {
     customTipInput.value = '';
     let tipValue = elem.getAttribute('data-tip-amount');
     currentTip = Number(tipValue / 100);
-    calculateTip(currentTip); //add para
+    calculateTip(currentTip);
   }
 
   if (elem.matches('#custom-tip')) {
-    resetTip();
+    resetTipBtns();
   }
 
   if (elem.matches('#reset-btn')) {
@@ -102,8 +106,12 @@ function calculateTip(num) {
 
   if (billValue && peopleValue && currentTip) {
     let tip = num;
-
-    let tipAmt = billValue * tip;
+    let tipAmt;
+    if (num < 1) {
+      tipAmt = billValue * tip;
+    } else {
+      tipAmt = tip;
+    }
 
     let totalAmt = billValue + tipAmt;
 
@@ -115,10 +123,15 @@ function calculateTip(num) {
   }
 }
 
-function resetTip() {
+function resetTipBtns() {
   tipPercents.forEach((e) => {
     e.checked = false;
   });
+}
+
+function resetResults() {
+  tipAmtDisplay.innerHTML = `$0.00`;
+  totalAmtDisplay.innerHTML = `$0.00`;
 }
 
 function resetApp() {
@@ -129,12 +142,11 @@ function resetApp() {
   billInput.value = '';
   peopleInput.value = '';
   customTipInput.value = '';
-  tipAmtDisplay.innerHTML = `$0.00`;
-  totalAmtDisplay.innerHTML = `$0.00`;
 
   resetBtn.classList.remove('active');
 
-  resetTip();
+  resetTipBtns();
+  resetResults();
 }
 
 /******************
