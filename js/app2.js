@@ -34,8 +34,36 @@ document.addEventListener('input', function (e) {
   if (input.matches('.input-num-field')) {
     let inputValue = Number(input.value);
     let inputIndex = input.getAttribute('data-input');
+    // let errorMsg = errorMsgs[inputIndex];
+    let isNum = floatRegex.test(inputValue);
 
-    validateInput(input, inputValue, inputIndex);
+    if (!isNum) {
+      // errorMsg.innerHTML = errorMsgsList[1];
+      // errorMsg.classList.remove('hide');
+      // input.classList.add('error');
+      showErrorMsg(input, inputIndex, 1);
+    } else if (input.value === '0') {
+      // errorMsg.innerHTML = errorMsgsList[2];
+      // errorMsg.classList.remove('hide');
+      // input.classList.add('error');
+      showErrorMsg(input, inputIndex, 2);
+    } else {
+      // errorMsg.classList.add('hide');
+      // input.classList.remove('error');
+      removeErrorMsg(input, inputIndex);
+      switch (inputIndex) {
+        case '0':
+          billValue = inputValue;
+          break;
+        case '1':
+          currentTip = inputValue;
+          break;
+        case '2':
+          peopleValue = inputValue;
+          break;
+      }
+      calculateTip(currentTip);
+    }
   }
 });
 
@@ -64,30 +92,6 @@ FUNCTIONS
 *******************/
 
 // Add validation function
-
-function validateInput(inputElem, inputVal, inputIdx) {
-  let isNum = floatRegex.test(inputVal);
-
-  if (!isNum) {
-    showErrorMsg(inputElem, inputIdx, 1);
-  } else if (inputElem.value === '0') {
-    showErrorMsg(inputElem, inputIdx, 2);
-  } else {
-    removeErrorMsg(inputElem, inputIdx);
-    switch (inputIdx) {
-      case '0':
-        billValue = inputVal;
-        break;
-      case '1':
-        currentTip = inputVal;
-        break;
-      case '2':
-        peopleValue = inputVal;
-        break;
-    }
-    calculateTip(currentTip);
-  }
-}
 
 function showErrorMsg(inputElem, inputFieldNum, msgNum) {
   errorMsgs[inputFieldNum].innerHTML = errorMsgsList[msgNum];
