@@ -22,15 +22,12 @@ const errorMsgsList = {
   1: 'Enter a valid number',
   2: "Can't be zero",
   3: 'Must be a whole number',
-  4: 'Enter bill amount',
-  5: 'Enter number of people',
-  6: 'Enter bill amount and number of people',
-  7: "Select a tip; don't be cheap!",
 };
 
 /******************
 EVENT LISTENERS 
 *******************/
+
 document.addEventListener('input', function (e) {
   let input = e.target;
 
@@ -40,12 +37,10 @@ document.addEventListener('input', function (e) {
     let errorMsg = errorMsgs[inputIndex];
     let isNum = floatRegex.test(inputValue);
 
-    // Make this is a function?
     if (!isNum) {
       errorMsg.innerHTML = errorMsgsList[1];
       errorMsg.classList.remove('hide');
-    } else if (inputValue === 0) {
-      console.log(inputValue);
+    } else if (input.value === '0') {
       errorMsg.innerHTML = errorMsgsList[2];
       errorMsg.classList.remove('hide');
     } else {
@@ -66,6 +61,7 @@ document.addEventListener('input', function (e) {
   }
 });
 
+// Designated "click" events
 document.addEventListener('click', function (e) {
   let elem = e.target;
 
@@ -89,11 +85,9 @@ document.addEventListener('click', function (e) {
 FUNCTIONS 
 *******************/
 
-function calculateTip(num) {
-  // Make sure bill value isn't 0 or null
-  // Make sure people value isn't 0 or null
-  // Display error
+// Add validation function
 
+function calculateTip(num) {
   if (billValue && peopleValue && currentTip) {
     let tip = num;
 
