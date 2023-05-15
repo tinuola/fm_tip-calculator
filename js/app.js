@@ -127,7 +127,7 @@ function resetApp() {
   customTipInput.value = '';
 
   resetBtn.classList.remove('active');
-  resetBtn.setAttribute('disabled');
+  resetBtn.setAttribute('disabled', '');
 
   resetTipBtns();
   resetResults();
