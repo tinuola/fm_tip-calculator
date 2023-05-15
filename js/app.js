@@ -40,11 +40,14 @@ document.addEventListener('input', function (e) {
     if (!isNum) {
       errorMsg.innerHTML = errorMsgsList[1];
       errorMsg.classList.remove('hide');
+      input.classList.add('error');
     } else if (input.value === '0') {
       errorMsg.innerHTML = errorMsgsList[2];
       errorMsg.classList.remove('hide');
+      input.classList.add('error');
     } else {
       errorMsg.classList.add('hide');
+      input.classList.remove('error');
       switch (inputIndex) {
         case '0':
           billValue = inputValue;
