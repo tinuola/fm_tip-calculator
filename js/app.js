@@ -1,11 +1,16 @@
 let billValue;
-// let customTipValue;
 let peopleValue;
-let currentTip; // Store/track current tip value
+let currentTip;
 
 const customTipInput = document.querySelector('#custom-tip');
 
 const errorMsgs = document.querySelectorAll('.display-error p');
+
+const tipAmtDisplay = document.querySelector('#tip-amount-display');
+
+const totalAmtDisplay = document.querySelector('#total-amount-display');
+
+const resetBtn = document.querySelector('#reset-btn');
 
 const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/;
 
@@ -31,11 +36,6 @@ const tipPercents = document.querySelectorAll('.tip-percent');
 const tipErrorMsg = document.querySelector('.tip-input-msg');
 // let customTipValue;
 
-const tipAmtDisplay = document.querySelector('#tip-amount');
-const totalAmtDisplay = document.querySelector('#total-amount');
-
-const resetBtn = document.querySelector('#reset-btn');
-
 const intRegex = /^\d*$/;
 
 /******************
@@ -43,6 +43,7 @@ EVENT LISTENERS
 *******************/
 document.addEventListener('input', function (e) {
   let input = e.target;
+
   if (input.matches('.input-num-field')) {
     let inputValue = Number(input.value);
     let inputIndex = input.getAttribute('data-input');
@@ -60,32 +61,33 @@ document.addEventListener('input', function (e) {
           billValue = inputValue;
           break;
         case '1':
-          // customTipValue = inputValue;
           currentTip = inputValue / 100;
-          console.log(currentTip);
-          // calculateTip()
           break;
         case '2':
           peopleValue = inputValue;
           break;
       }
+      calculateTip(currentTip);
     }
   }
 });
 
 document.addEventListener('click', function (e) {
   let elem = e.target;
+
   if (elem.matches('.tip-percent')) {
     customTipInput.value = '';
     let tipValue = elem.getAttribute('data-tip-amount');
     currentTip = Number(tipValue / 100);
-    calculateTip(); //add para
+    calculateTip(currentTip); //add para
   }
 
   if (elem.matches('#custom-tip')) {
-    tipPercents.forEach((e) => {
-      e.checked = false;
-    });
+    resetTip();
+  }
+
+  if (elem.matches('#reset-btn')) {
+    resetApp();
   }
 });
 
@@ -93,68 +95,47 @@ document.addEventListener('click', function (e) {
 FUNCTIONS 
 *******************/
 
-function calculateTip() {
+function calculateTip(num) {
   // Make sure bill value isn't 0 or null
   // Make sure people value isn't 0 or null
   // Display error
-  // Or calculate
-  // change reset button style
+
+  if (billValue && peopleValue && currentTip) {
+    let tip = num;
+
+    let tipAmt = billValue * tip;
+
+    let totalAmt = billValue + tipAmt;
+
+    tipAmtDisplay.innerHTML = `$${(tipAmt / peopleValue).toFixed(2)}`;
+
+    totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`;
+
+    resetBtn.classList.add('active');
+  }
 }
 
-/******************
-FUNCTIONS 
-*******************/
+function resetTip() {
+  tipPercents.forEach((e) => {
+    e.checked = false;
+  });
+}
 
-// Display percentages from tips array
-// const displayTipValues = () => {
-// tipPercents.forEach((tip, i) => {
-// tip.innerHTML = `${tips[i]}%`
-// tip.value = `${tips[i]}`;
-// });
-// };
-// displayTipValues();
+function resetApp() {
+  billValue = 0;
+  peopleValue = 0;
+  currentTip = 0;
 
-// Verify if input field for bill or people is empty
-// Used by tip event listeners
-// const verifyNonEmptyInput = () => {
-//   billValue = billInput.value;
-//   peopleValue = peopleInput.value;
-//   return billValue === '' || peopleValue === '';
-// };
+  billInput.value = '';
+  peopleInput.value = '';
+  customTipInput.value = '';
+  tipAmtDisplay.innerHTML = `$0.00`;
+  totalAmtDisplay.innerHTML = `$0.00`;
 
-// Calculate values and display final result
-// const calcShowResults = (num) => {
-//   let isInputEmpty = verifyNonEmptyInput();
+  resetBtn.classList.remove('active');
 
-//   if (isInputEmpty) {
-//     tipErrorMsg.innerHTML = `Please enter Bill amount and Number of People.`;
-//     return null;
-//   } else {
-//     billValue = Number(billInput.value);
-//     peopleValue = Number(peopleInput.value);
-
-//     let tip = num / 100;
-//     let tipAmt = billValue * tip;
-//     let totalAmt = billValue + tipAmt;
-
-//     tipAmtDisplay.innerHTML = `$${(tipAmt / peopleValue).toFixed(2)}`;
-//     totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`;
-
-//     tipErrorMsg.innerHTML = ``;
-
-//     resetBtn.style.backgroundColor = 'green';
-//   }
-// };
-
-// Reset calculator
-// const reset = () => {
-//   billInput.value = '';
-//   peopleInput.value = '';
-//   customTipInput.value = '';
-//   tipAmtDisplay.innerHTML = `$0.00`;
-//   totalAmtDisplay.innerHTML = `$0.00`;
-//   resetBtn.style.backgroundColor = 'transparent';
-// };
+  resetTip();
+}
 
 /******************
 EVENT LISTENERS 
