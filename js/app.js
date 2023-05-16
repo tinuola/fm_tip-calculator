@@ -20,7 +20,7 @@ const floatRegex = /^[+]?(?=.)(?:\d+,)*\d*(?:\.\d+)?$/;
 const intRegex = /^[0-9]*$/;
 
 const errorMsgsList = {
-  1: 'Enter a valid and positive number',
+  1: 'Enter a valid, positive number',
   2: "Can't be zero or empty",
   3: 'Enter a valid, positive, whole number',
   4: 'Must be at least $1.00',
@@ -47,7 +47,7 @@ billInput.addEventListener('input', function (e) {
     showErrorMsg(this, position, 4);
     billValue = 0;
     resetResults();
-  } else if (Number(value) === 0) {
+  } else if (value === 0) {
     showErrorMsg(this, position, 2);
     billValue = 0;
     resetResults();
@@ -72,7 +72,7 @@ customTipInput.addEventListener('input', function (e) {
     showErrorMsg(this, position, 4);
     currentTip = 0;
     resetResults();
-  } else if (Number(value) === 0) {
+  } else if (value === 0) {
     showErrorMsg(this, position, 2);
     currentTip = 0;
     resetResults();
@@ -93,7 +93,7 @@ peopleInput.addEventListener('input', function (e) {
     showErrorMsg(this, position, 3);
     peopleValue = 0;
     resetResults();
-  } else if (Number(value) === 0) {
+  } else if (value === 0) {
     showErrorMsg(this, position, 2);
     peopleValue = 0;
     resetResults();
