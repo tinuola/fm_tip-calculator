@@ -22,20 +22,36 @@ const errorMsgsList = {
   1: 'Enter a valid number',
   2: "Can't be zero",
   3: 'Must be a whole number',
+  4: 'Must be more than $1.00',
 };
 
-/******************
+/*
+*****************
 EVENT LISTENERS 
-*******************/
+******************
+*/
 
 document.addEventListener('input', function (e) {
   let input = e.target;
+  let inputValue = Number(input.value);
+  let inputIndex = input.getAttribute('data-input');
 
   if (input.matches('.input-num-field')) {
-    let inputValue = Number(input.value);
-    let inputIndex = input.getAttribute('data-input');
-
     validateInput(input, inputValue, inputIndex);
+  }
+});
+
+document.addEventListener('change', function (e) {
+  let input = e.target;
+  let inputValue = Number(input.value);
+  let inputIndex = input.getAttribute('data-input');
+
+  if (input.matches('.input-num-field')) {
+    if (inputIndex === '1' || inputIndex === '2') {
+      validateMoreThanDollar(input, inputValue, inputIndex);
+    } else {
+      validateWholeNum(input, inputValue, inputIndex);
+    }
   }
 });
 
@@ -59,11 +75,11 @@ document.addEventListener('click', function (e) {
   }
 });
 
-/******************
+/*
+*****************
 FUNCTIONS 
-*******************/
-
-// Add validation function
+******************
+*/
 
 function validateInput(inputElem, inputVal, inputIdx) {
   let isNum = floatRegex.test(inputVal);
@@ -75,13 +91,13 @@ function validateInput(inputElem, inputVal, inputIdx) {
   } else {
     removeErrorMsg(inputElem, inputIdx);
     switch (inputIdx) {
-      case '0':
+      case '1':
         billValue = inputVal;
         break;
-      case '1':
+      case '2':
         currentTip = inputVal;
         break;
-      case '2':
+      case '3':
         peopleValue = inputVal;
         break;
     }
@@ -89,14 +105,37 @@ function validateInput(inputElem, inputVal, inputIdx) {
   }
 }
 
+function validateWholeNum(inputElem, inputVal, inputIdx) {
+  let isWhole = intRegex.test(inputVal);
+  if (!isWhole) {
+    showErrorMsg(inputElem, inputIdx, 3);
+    peopleValue = 0;
+  } else {
+    removeErrorMsg(inputElem, inputIdx);
+  }
+}
+
+function validateMoreThanDollar(inputElem, inputVal, inputIdx) {
+  if (inputVal < 1) {
+    showErrorMsg(inputElem, inputIdx, 4);
+    billValue = 0;
+    currentTip = 0;
+  } else {
+    removeErrorMsg(inputElem, inputIdx);
+  }
+}
+
 function showErrorMsg(inputElem, inputFieldNum, msgNum) {
-  errorMsgs[inputFieldNum].innerHTML = errorMsgsList[msgNum];
-  errorMsgs[inputFieldNum].classList.remove('hide');
+  // Subtract 1 to match field position to errorMsg array indices
+  errorMsgs[inputFieldNum - 1].innerHTML = errorMsgsList[msgNum];
+  errorMsgs[inputFieldNum - 1].classList.remove('hide');
   inputElem.classList.add('error');
 }
 
 function removeErrorMsg(inputElem, inputFieldNum) {
-  errorMsgs[inputFieldNum].classList.add('hide');
+  // Subtract 1 to match field position to errorMsg array indices
+  console.log(errorMsgs[inputFieldNum - 1]);
+  errorMsgs[inputFieldNum - 1].classList.add('hide');
   inputElem.classList.remove('error');
 }
 
