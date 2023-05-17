@@ -16,7 +16,7 @@ body {
   font-family: var(--primary-font);
   font-weight: 700;
   display: grid;
-  /* grid-template-rows: auto 1fr auto; */
+  grid-template-rows: 1fr auto;
   justify-items: center;
   align-items: center;
   background-color: var(--light-gray-cyan);
@@ -40,23 +40,12 @@ body {
   justify-content: center;
   align-items: center;
   width: 375px;
-}
-
-@media (min-width: 1000px) {
-  .container {
-    width: 920px;
-  }
-}
-
-header {
-  /* margin-top: 3.125rem; */
+  margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
-@media (min-width: 1000px) {
-  header {
-    margin-bottom: 5.5rem;
-  }
+header {
+  margin-bottom: 2.5rem;
 }
 
 main {
@@ -65,12 +54,22 @@ main {
 }
 
 @media (min-width: 1000px) {
+  .container {
+    width: 920px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  header {
+    margin-bottom: 5.5rem;
+  }
+
   main {
-    /* width: 920px; */
     display: flex;
     align-self: flex-start;
   }
 }
+
 /* Data/User Input Sections  */
 
 .display-input {
@@ -336,7 +335,7 @@ button.active:hover {
 /* Footer */
 
 .fm-byline-row {
-  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .fm-byline {
