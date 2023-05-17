@@ -133,13 +133,13 @@ FUNCTIONS
 function showErrorMsg(inputElem, inputFieldNum, msgNum) {
   // Subtract 1 to match field position to errorMsg array indices
   errorMsgs[inputFieldNum - 1].innerHTML = errorMsgsList[msgNum];
-  errorMsgs[inputFieldNum - 1].classList.remove('hide');
+  errorMsgs[inputFieldNum - 1].classList.remove('hide-error');
   inputElem.classList.add('error');
 }
 
 function removeErrorMsg(inputElem, inputFieldNum) {
   // Subtract 1 to match field position to errorMsg array indices
-  errorMsgs[inputFieldNum - 1].classList.add('hide');
+  errorMsgs[inputFieldNum - 1].classList.add('hide-error');
   inputElem.classList.remove('error');
 }
 
@@ -174,7 +174,7 @@ function resetResults() {
 function resetInputFields() {
   inputFields.forEach((e, i) => {
     e.classList.remove('error');
-    errorMsgs[i].classList.add('hide');
+    errorMsgs[i].classList.add('hide-error');
   });
 }
 
