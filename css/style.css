@@ -270,30 +270,33 @@ fieldset {
   }
 }
 
-section h3 {
+.display__app-results section h3 {
   font-size: 1rem;
   color: var(--white);
 }
 
-section h3 + p {
+.display__app-results section h3 + p {
   font-size: 0.8125rem;
-  /* color: var(--gray-cyan); */
   color: var(--white);
 }
 
-section > div {
+.display__app-results section > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-section > div > h4 {
+.display__app-results section > div > h4 {
   font-size: 2rem;
+  color: hsla(183, 78%, 24%, 1);
+}
+
+.display__app-results section > div > h4.active {
   color: var(--primary-cyan);
 }
 
 @media (min-width: 1000px) {
-  section > div > h4 {
+  .display__app-results section > div > h4 {
     font-size: 3rem;
   }
 }
@@ -317,7 +320,6 @@ button {
 }
 
 button.active {
-  /* color: var(--dark-cyan); */
   background-color: var(--primary-cyan);
 }
 

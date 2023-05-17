@@ -153,6 +153,9 @@ function calculateTip() {
 
     totalAmtDisplay.innerHTML = `$${(totalAmt / peopleValue).toFixed(2)}`;
 
+    tipAmtDisplay.classList.add('active');
+    totalAmtDisplay.classList.add('active');
+
     resetBtn.removeAttribute('disabled');
     resetBtn.classList.add('active');
   } else {
@@ -169,6 +172,9 @@ function resetTipBtns() {
 function resetResults() {
   tipAmtDisplay.innerHTML = `$0.00`;
   totalAmtDisplay.innerHTML = `$0.00`;
+
+  tipAmtDisplay.classList.remove('active');
+  totalAmtDisplay.classList.remove('active');
 }
 
 function resetInputFields() {
