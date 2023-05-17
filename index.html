@@ -36,160 +36,161 @@
     <title>Tip Calculator App | Frontend Mentor</title>
   </head>
   <body>
-    <header>
-      <h1 class="sr-only">Tip Calculator App - A Frontend Mentor Project</h1>
-      <img
-        src="./assets/images/logo.svg"
-        alt="App Logo" />
-    </header>
+    <div class="container">
+      <header>
+        <h1 class="sr-only">Tip Calculator App - A Frontend Mentor Project</h1>
+        <img
+          src="./assets/images/logo.svg"
+          alt="App Logo" />
+      </header>
 
-    <!-- App Body -->
-    <main>
-      <div class="display-input">
-        <!-- Bill Input -->
-        <section>
-          <div class="display-error">
-            <h2>Bill</h2>
-            <p class="hide"></p>
-          </div>
-          <input
-            type="text"
-            id="bill-input"
-            class="input-num-field input-bground"
-            data-input="1"
-            placeholder="0" />
-          <label
-            for="bill-input"
-            class="sr-only"
-            >Enter Bill Amount</label
-          >
-        </section>
-
-        <!-- Tip Buttons -->
-        <section>
-          <div class="display-error">
-            <h2>Select Tip % or Enter Tip Amount</h2>
-            <p class="hide"></p>
-          </div>
-          <div class="input-fields">
-            <fieldset>
-              <legend class="sr-only">Select Tip %</legend>
-              <input
-                type="radio"
-                name="tip"
-                class="tip-percent"
-                data-tip-amount="5"
-                id="tip-five" />
-              <label
-                for="tip-five"
-                class="sr-only"
-                >5%</label
-              >
-              <input
-                type="radio"
-                name="tip"
-                class="tip-percent"
-                data-tip-amount="10"
-                id="tip-ten" />
-              <label
-                for="tip-ten"
-                class="sr-only"
-                >10%</label
-              >
-              <input
-                type="radio"
-                name="tip"
-                class="tip-percent"
-                data-tip-amount="15"
-                id="tip-fifteen" />
-              <label
-                for="tip-fifteen"
-                class="sr-only"
-                >15%</label
-              >
-              <input
-                type="radio"
-                name="tip"
-                class="tip-percent"
-                data-tip-amount="25"
-                id="tip-twentyfive" />
-              <label
-                for="tip-twentyfive"
-                class="sr-only"
-                >25%</label
-              >
-              <input
-                type="radio"
-                name="tip"
-                class="tip-percent"
-                data-tip-amount="50"
-                id="tip-fifty" />
-              <label
-                for="tip-fifty"
-                class="sr-only"
-                >50%</label
-              >
-              <input
-                type="text"
-                placeholder="Custom"
-                data-input="2"
-                class="input-num-field"
-                id="custom-tip" />
-              <label
-                for="custom-tip"
-                class="sr-only"
-                >Custom Tip</label
-              >
-            </fieldset>
-          </div>
-        </section>
-
-        <!-- People Input -->
-        <section>
-          <div class="display-error">
-            <h2>Number of People</h2>
-            <p class="hide"></p>
-          </div>
-          <input
-            type="text"
-            id="people-input"
-            class="input-num-field input-bground"
-            data-input="3"
-            placeholder="0" />
-          <label
-            for="people-input"
-            class="sr-only"
-            >Enter Number of People</label
-          >
-        </section>
-      </div>
-
-      <!-- Calculation Results -->
-      <div class="display-result">
-        <section>
-          <div class="tip-amount">
-            <div>
-              <h3>Tip Amount</h3>
-              <p>/ Person</p>
+      <!-- App Body -->
+      <main>
+        <div class="display-input">
+          <!-- Bill Input -->
+          <section>
+            <div class="display-error">
+              <h2>Bill</h2>
+              <p class="hide"></p>
             </div>
-            <h4 id="tip-amount-display">$0.00</h4>
-          </div>
-          <div class="total-amount">
-            <div>
-              <h3>Total</h3>
-              <p>/ Person</p>
-            </div>
-            <h4 id="total-amount-display">$0.00</h4>
-          </div>
-          <button
-            id="reset-btn"
-            disabled>
-            Reset
-          </button>
-        </section>
-      </div>
-    </main>
+            <input
+              type="text"
+              id="bill-input"
+              class="input-num-field input-bground"
+              data-input="1"
+              placeholder="0" />
+            <label
+              for="bill-input"
+              class="sr-only"
+              >Enter Bill Amount</label
+            >
+          </section>
 
+          <!-- Tip Buttons -->
+          <section>
+            <div class="display-error">
+              <h2>Select Tip % or Enter Tip Amount</h2>
+              <p class="hide"></p>
+            </div>
+            <div class="input-fields">
+              <fieldset>
+                <legend class="sr-only">Select Tip %</legend>
+                <input
+                  type="radio"
+                  name="tip"
+                  class="tip-percent"
+                  data-tip-amount="5"
+                  id="tip-five" />
+                <label
+                  for="tip-five"
+                  class="sr-only"
+                  >5%</label
+                >
+                <input
+                  type="radio"
+                  name="tip"
+                  class="tip-percent"
+                  data-tip-amount="10"
+                  id="tip-ten" />
+                <label
+                  for="tip-ten"
+                  class="sr-only"
+                  >10%</label
+                >
+                <input
+                  type="radio"
+                  name="tip"
+                  class="tip-percent"
+                  data-tip-amount="15"
+                  id="tip-fifteen" />
+                <label
+                  for="tip-fifteen"
+                  class="sr-only"
+                  >15%</label
+                >
+                <input
+                  type="radio"
+                  name="tip"
+                  class="tip-percent"
+                  data-tip-amount="25"
+                  id="tip-twentyfive" />
+                <label
+                  for="tip-twentyfive"
+                  class="sr-only"
+                  >25%</label
+                >
+                <input
+                  type="radio"
+                  name="tip"
+                  class="tip-percent"
+                  data-tip-amount="50"
+                  id="tip-fifty" />
+                <label
+                  for="tip-fifty"
+                  class="sr-only"
+                  >50%</label
+                >
+                <input
+                  type="text"
+                  placeholder="Custom"
+                  data-input="2"
+                  class="input-num-field"
+                  id="custom-tip" />
+                <label
+                  for="custom-tip"
+                  class="sr-only"
+                  >Custom Tip</label
+                >
+              </fieldset>
+            </div>
+          </section>
+
+          <!-- People Input -->
+          <section>
+            <div class="display-error">
+              <h2>Number of People</h2>
+              <p class="hide"></p>
+            </div>
+            <input
+              type="text"
+              id="people-input"
+              class="input-num-field input-bground"
+              data-input="3"
+              placeholder="0" />
+            <label
+              for="people-input"
+              class="sr-only"
+              >Enter Number of People</label
+            >
+          </section>
+        </div>
+
+        <!-- Calculation Results -->
+        <div class="display-result">
+          <section>
+            <div class="tip-amount">
+              <div>
+                <h3>Tip Amount</h3>
+                <p>/ Person</p>
+              </div>
+              <h4 id="tip-amount-display">$0.00</h4>
+            </div>
+            <div class="total-amount">
+              <div>
+                <h3>Total</h3>
+                <p>/ Person</p>
+              </div>
+              <h4 id="total-amount-display">$0.00</h4>
+            </div>
+            <button
+              id="reset-btn"
+              disabled>
+              Reset
+            </button>
+          </section>
+        </div>
+      </main>
+    </div>
     <!-- <footer class="fm-byline-row">
       <p class="fm-byline">
         Challenge by
