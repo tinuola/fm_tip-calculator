@@ -4,7 +4,7 @@ let currentTip;
 
 const billInput = document.querySelector('#bill-input');
 const peopleInput = document.querySelector('#people-input');
-const customTipInput = document.querySelector('#custom-tip');
+const customTipInput = document.querySelector('#custom-tip-input');
 
 const tipPercents = document.querySelectorAll('.tip-percent');
 

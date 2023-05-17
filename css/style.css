@@ -70,7 +70,9 @@ main {
   }
 }
 
-/* Data/User Input Sections  */
+/******************
+User Input Sections
+*******************/
 
 .display__user-input {
   padding-top: 2rem;
@@ -126,7 +128,9 @@ main {
   }
 }
 
-/* Input Fields */
+/******************
+Input Fields
+*******************/
 
 .display__user-input section > div + input {
   width: 100%;
@@ -182,7 +186,10 @@ input[type='text']::placeholder {
   background-image: url('../assets/images/icon-person.svg');
 }
 
-/* Tip Buttons */
+/******************
+Tip Buttons
+*******************/
+
 fieldset {
   border: 0;
   display: flex;
@@ -243,7 +250,9 @@ fieldset {
   color: var(--dark-gray-cyan);
 }
 
-/* Results Section */
+/******************
+Results Section
+*******************/
 
 .display__app-results {
   padding: 2rem 1.5rem;
@@ -327,7 +336,9 @@ button.active:hover {
   background-color: var(--light-cyan);
 }
 
-/* Footer */
+/******************
+Footer
+*******************/
 
 .fm-byline-row {
   padding-bottom: 1.5rem;

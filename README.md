@@ -4,11 +4,11 @@ Solution to the _[Tip Calculator App](https://www.frontendmentor.io/challenges/t
 
 ### Challenge
 
-- Build out a tip calculator app using provided [desktop](/assets/design/desktop-design.jpg) and [mobile](/assets/design/mobile-design.jpg)
+- Build out a tip calculator app using provided [desktop](/assets/design/desktop-design-empty.jpg) and [mobile](/assets/design/mobile-design.jpg)
 - Users should be able to:
   - View the optimal layout for the app depending on their device's screen size
-  - See hover states for all interactive elements on the page
-  - Calculate the correct tip and total cost of the bill per person
+  - See hover states for all [interactive elements](/assets/design/active-states.jpg) on the page
+  - [Calculate the correct tip and total cost of the bill per person](/assets/design/desktop-design-completed.jpg)
 
 ### Solution
 
@@ -16,11 +16,12 @@ Live Site: [https://tinuola.github.io/fm_tip-calculator/](https://tinuola.github
 
 ### Retrospective
 
+-
 - Working with Form elements: [radio input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio), using [focus](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) states
 
 ### Enhancement(s)
 
--
+- TBD
 
 ### Tools & Resources
 
