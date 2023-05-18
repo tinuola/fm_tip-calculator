@@ -59,6 +59,7 @@ billInput.addEventListener('input', function (e) {
 });
 
 customTipInput.addEventListener('input', function (e) {
+  resetTipBtns();
   let value = Number(this.value);
   let position = this.getAttribute('data-input');
 
